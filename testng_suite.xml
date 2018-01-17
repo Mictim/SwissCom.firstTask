@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "SampleSuite">
+    <test name = "Search By Name">
+    <parameter name ="name" value="Rindlisbacher"/>
+    <parameter name="assertMinValue" value="750"/>
+    <parameter name="assertMaxValue" value="850"/>
+    <classes>
+        <class name = "com.swiss.tasks.tests.SearchByNameTest" />
+    </classes>
+</test>
+    <test name = "Search By Name and Location">
+        <parameter name="name" value="Grendelmeier Peter"/>
+        <parameter name="location" value="Zuerich"/>
+        <parameter name="expectedPhoneNumber" value="+41 44 433 02 55"/>
+        <classes>
+            <class name="com.swiss.tasks.tests.SearchByNameAndLocalityTest"/>
+        </classes>
+    </test>
+    <test name = "Search By Name and Location, but response should be Empty">
+        <parameter name="name" value="Grendelmeier Hansueli"/>
+        <parameter name="location" value="St. Gallen"/>
+    </test>
+</suite>
