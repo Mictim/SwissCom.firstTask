@@ -1,6 +1,7 @@
 # SwissCom.firstTask
 
-In file config.properties can be change browser, and folder to chromedriver:
+In the file config.properties browser and folder to chromedriver can be changed:
+
 browser=chrome
 chromedriver=/path/to/your/chrome/driver
 
