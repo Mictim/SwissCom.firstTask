@@ -1,4 +1,4 @@
-package com.swiss.tasks.PageObjects;
+package com.swiss.tasks.pageObjects;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;

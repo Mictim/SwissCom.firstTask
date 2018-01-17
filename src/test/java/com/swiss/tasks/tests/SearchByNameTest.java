@@ -1,6 +1,7 @@
 package com.swiss.tasks.tests;
 
-import com.swiss.tasks.PageObjects.SearchPage;
+import com.swiss.tasks.pageObjects.SearchPage;
+import com.swiss.tasks.vo.SearchCriteria;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -13,10 +14,10 @@ import static org.hamcrest.CoreMatchers.*;
 public class SearchByNameTest extends BaseTest{
 
     @Test
-    @Parameters({"name", "assertMinValue", "assertMaxValue"})
-    public void searchByName(String name, int assertMinValue, int assertMaxValue){
+    @Parameters({"searchString", "assertMinValue", "assertMaxValue"})
+    public void searchByName(String searchString, int assertMinValue, int assertMaxValue){
         assertThat(new SearchPage().
-                        inputSearchCriteria(name).
+                        getResults(new SearchCriteria(searchString, null)).
                         getSearchResultsCount(),
                    allOf(greaterThan(assertMinValue), lessThan(assertMaxValue)));
     }
