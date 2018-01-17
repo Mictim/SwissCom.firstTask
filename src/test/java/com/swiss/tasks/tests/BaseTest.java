@@ -20,10 +20,9 @@ public class BaseTest {
             e.printStackTrace();
         }
         String browser = props.getProperty("browser");
-        System.out.println("BROWSER = " + browser);
         switch(browser){
             case ("chrome"):
-                System.setProperty("webdriver.chrome.driver", "/Users/imac/DevTools/chromedriver");
+                System.setProperty("webdriver.chrome.driver", props.getProperty("chromedriver"));
                 Configuration.browser = "chrome";
                 break;
             default:
